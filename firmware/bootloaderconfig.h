@@ -60,18 +60,18 @@ these macros are defined, the boot loader usees them.
   #if (defined(__AVR_ATmega640__) || defined (__AVR_ATmega128__) || defined(__AVR_ATmega1280__) || defined(__AVR_ATmega1281__) || defined(__AVR_ATmega2560__) || defined(__AVR_ATmega2561__))
     #define USB_CFG_INTPORT_BIT 0
   #else
-    #define USB_CFG_INTPORT_BIT 2
+    #define USB_CFG_INTPORT_BIT 2 /* rev 1 - Atmega328 - TQFP Pin 32*/
   #endif
 #endif
-/* Not all devices have their INT0 on PD2.
+/* Not all devices have their INT0 on PD2. 
  * Since "INT0" and "USB_CFG_DPLUS_BIT" should get the same signals,
  * map them to be ideally the same:
  * So abstract "USB_CFG_DPLUS_BIT" to this one here.
  */
 
 #ifndef USB_CFG_DMINUS_BIT
-  /* This is Revision 3 and later (where PD6 and PD7 were swapped */
-  #define USB_CFG_DMINUS_BIT      3    /* Rev.2 and previous was 6 */
+  /* This is Revision 1  */
+  #define USB_CFG_DMINUS_BIT      3    /* rev 1 - PD3 Atmega328 - TQFP Pin 1 */
 #endif
 /* This is the bit number in USB_CFG_IOPORT where the USB D- line is connected.
  * This may be any bit in the port.
@@ -90,8 +90,8 @@ these macros are defined, the boot loader usees them.
  * jumper is connected to this port
  */
 #ifndef JUMPER_BIT
-  /* This is Revision 3 and later (where PD6 and PD7 were swapped */
-  #define JUMPER_BIT           5       /* Rev.2 and previous was 7 */
+  /* rev1 - Boot on PD5  */
+  #define JUMPER_BIT           5       /* PD 5 Atmega TQFP-Package Pin 9*/
 #endif
 /* 
  * jumper is connected to this bit in port "JUMPER_PORT", active low

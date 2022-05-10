@@ -1,6 +1,6 @@
 # Name: Makefile.inc
 # Project: USBaspLoader (updater)
-# Author: Stephan Bärwolf
+# Author: Stephan Bï¿½rwolf
 # Creation Date: 2012-09-01
 # Tabsize: 4
 # License: GNU GPL v2 (see License.txt)
@@ -37,10 +37,10 @@ DANGEROUS=0
 
 # PROGRAMMER contains AVRDUDE options to address your programmer
 # PROGRAMMER = -c pony-stk200
-# PROGRAMMER = -c usbasp
-PROGRAMMER = -c usbtiny
+ PROGRAMMER = -c usbasp
+# PROGRAMMER = -c usbtiny
 
-#  since USBaspLoader supports HAVE_BLB11_SOFTW_LOCKBIT...
+#  since USBaspLoader supports HAVE_BLB11_SOFTW_LOCKBIT...s
 LOCKOPT = -U lock:w:0x3f:m
 
 
@@ -152,7 +152,7 @@ DEFINES_168             = -DCONFIG_USE__EXCESSIVE_ASSEMBLER -DCONFIG_NO__NEED_WA
 
 
 
-FUSEOPT_328             = -U lfuse:w:0xd7:m -U hfuse:w:0xd0:m -U efuse:w:0x04:m
+FUSEOPT_328             = -U lfuse:w:0xd7:m -U hfuse:w:0xd0:m -U efuse:w:0xfc:m
 BOOTLOADER_ADDRESS_328  = 0x7000
 DEFINES_328             = #-DEMPTY
 
