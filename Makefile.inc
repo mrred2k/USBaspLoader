@@ -5,7 +5,7 @@
 # Tabsize: 4
 # License: GNU GPL v2 (see License.txt)
 
-F_CPU = 16000000
+F_CPU = 12000000
 DEVICE = atmega328p
 
 # where the updating firmware should be located (starting address)
